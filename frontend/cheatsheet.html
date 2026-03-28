@@ -1,0 +1,293 @@
+<!-- 
+    QUICK REFERENCE GUIDE - Copy & Paste Code Snippets
+    Use these templates to speed up your coding!
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Dev Cheatsheet</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        h1, h2 { color: #4fc3f7; }
+        h3 { color: #81c784; }
+        .code-block {
+            background: #2d2d30;
+            padding: 15px;
+            border-left: 4px solid #4fc3f7;
+            margin: 15px 0;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        .section {
+            margin: 30px 0;
+            border-bottom: 2px solid #444;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Web Development Cheatsheet</h1>
+    <p>Copy & paste these code snippets when building projects</p>
+
+    <!-- HTML SECTION -->
+    <div class="section">
+        <h2>HTML - Basic Tags</h2>
+        
+        <h3>Full Page Template:</h3>
+        <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Your content here --&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </div>
+
+        <h3>Common Tags:</h3>
+        <div class="code-block">
+&lt;h1&gt; Main Heading &lt;/h1&gt;
+&lt;h2&gt; Sub Heading &lt;/h2&gt;
+&lt;p&gt; Paragraph text &lt;/p&gt;
+&lt;a href="https://example.com"&gt; Link &lt;/a&gt;
+&lt;button&gt; Click Me &lt;/button&gt;
+&lt;img src="image.jpg" alt="Description"&gt;
+&lt;input type="text" placeholder="Enter text"&gt;
+&lt;ul&gt; &lt;li&gt; Item &lt;/li&gt; &lt;/ul&gt;
+        </div>
+    </div>
+
+    <!-- CSS SECTION -->
+    <div class="section">
+        <h2>CSS - Styling</h2>
+        
+        <h3>Color Examples:</h3>
+        <div class="code-block">
+/* By name */
+color: red;
+
+/* Hex codes (0-9, A-F) */
+color: #FF0000;
+
+/* RGB */
+color: rgb(255, 0, 0);
+
+/* Check: htmlcolorcodes.com */
+        </div>
+
+        <h3>Text Styling:</h3>
+        <div class="code-block">
+color: #333;              /* Text color */
+font-size: 18px;         /* Size */
+font-weight: bold;       /* Bold */
+font-family: Arial;      /* Font type */
+text-align: center;      /* center/left/right */
+text-decoration: underline;
+line-height: 1.6;        /* Space between lines */
+        </div>
+
+        <h3>Box Model (Spacing):</h3>
+        <div class="code-block">
+padding: 20px;           /* Space INSIDE */
+margin: 20px;            /* Space OUTSIDE */
+border: 2px solid #ccc;  /* Border line */
+border-radius: 8px;      /* Rounded corners */
+width: 100%;             /* Width */
+height: 100px;           /* Height */
+        </div>
+
+        <h3>Hover Effects:</h3>
+        <div class="code-block">
+button:hover {
+    background-color: #007bff;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+        </div>
+
+        <h3>Responsive (Mobile):</h3>
+        <div class="code-block">
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        width: 90%;
+    }
+}
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT SECTION -->
+    <div class="section">
+        <h2>JavaScript - Logic</h2>
+        
+        <h3>Variables (Store Data):</h3>
+        <div class="code-block">
+let name = "John";              // Can change
+const age = 25;                 // Cannot change
+let counter = 0;
+let items = [ "apple", "milk" ]; /* Array */
+        </div>
+
+        <h3>Functions (Reusable Code):</h3>
+        <div class="code-block">
+function greet(name) {
+    console.log("Hello " + name);
+}
+greet("John");
+
+/* Arrow function (modern) */
+const add = (a, b) =&gt; a + b;
+        </div>
+
+        <h3>Get HTML Elements:</h3>
+        <div class="code-block">
+/* By ID */
+let element = document.getElementById("myId");
+
+/* By class */
+let elements = document.querySelectorAll(".myClass");
+
+/* Change content */
+element.innerHTML = "New text";
+element.textContent = "New text";
+
+/* Change style */
+element.style.color = "red";
+element.style.display = "none"; /* Hide */
+        </div>
+
+        <h3>Events (React to Clicks):</h3>
+        <div class="code-block">
+/* In HTML */
+&lt;button onclick="myFunction()"&gt; Click &lt;/button&gt;
+
+/* In JavaScript */
+document.getElementById("btn").addEventListener("click", function() {
+    alert("Clicked!");
+});
+        </div>
+
+        <h3>Conditions (If/Else):</h3>
+        <div class="code-block">
+if (age &gt;= 18) {
+    console.log("Adult");
+} else if (age &gt;= 13) {
+    console.log("Teen");
+} else {
+    console.log("Child");
+}
+        </div>
+
+        <h3>Loops (Repeat Code):</h3>
+        <div class="code-block">
+/* Loop through array */
+let fruits = ["apple", "banana"];
+fruits.forEach(fruit =&gt; {
+    console.log(fruit);
+});
+
+/* Traditional loop */
+for (let i = 0; i &lt; 5; i++) {
+    console.log(i);
+}
+        </div>
+
+        <h3>Array Methods:</h3>
+        <div class="code-block">
+let arr = [1, 2, 3];
+
+arr.push(4);          /* Add item */
+arr.pop();            /* Remove last */
+arr.length;           /* Count items */
+arr.includes(2);      /* Check if exists */
+arr.map(x =&gt; x * 2);  /* Transform items */
+arr.filter(x =&gt; x &gt; 1); /* Keep matching */
+        </div>
+    </div>
+
+    <!-- USEFUL SITES -->
+    <div class="section">
+        <h2>🔗 Helpful Websites</h2>
+        <div class="code-block">
+MDN Web Docs (Mozilla) - Best documentation
+mdn.io
+
+W3Schools - Easy tutorials
+w3schools.com
+
+Free Code Camp - Full courses on YouTube
+freecodecamp.org
+
+HTML Color Codes
+htmlcolorcodes.com
+
+Google Fonts (Free fonts)
+fonts.google.com
+
+Can I Use (Check browser support)
+caniuse.com
+        </div>
+    </div>
+
+    <!-- DEBUGGING TIPS -->
+    <div class="section">
+        <h2>🐛 Debugging Tips</h2>
+        <div class="code-block">
+/* Print to console (press F12 in browser) */
+console.log("Value: " + myVar);
+
+/* Show alert */
+alert("Something wrong!");
+
+/* Common errors to fix */
+1. Wrong ID name (getElementById)
+2. Typos in variable names
+3. Missing brackets { }
+4. Missing quotes around strings
+5. onclick in HTML - check function exists
+        </div>
+    </div>
+
+    <!-- QUICK START DAILY PRACTICE -->
+    <div class="section">
+        <h2>📅 Daily Practice (30 mins)</h2>
+        <div class="code-block">
+Week 1: Build simple pages with HTML
+- Practice: 3x create your own HTML page
+
+Week 2: Add CSS styling
+- Practice: Style the pages with colors, fonts
+
+Week 3: Add JavaScript interactions
+- Practice: Make buttons do things
+
+Week 4: Build a complete project
+- Todo list, calculator, or game
+
+Remember: Consistency &gt; Perfection!
+Code a little every day, not big sessions.
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!-- 
+    This is your reference guide!
+    Bookmark it or print it.
+    Copy code snippets as needed.
+-->

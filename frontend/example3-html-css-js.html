@@ -1,0 +1,182 @@
+<!-- 
+    PHASE 3: HTML + CSS + JavaScript (Week 9-10)
+    Now pages can be interactive!
+    Focus: Learning JavaScript basics
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Page</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .message {
+            color: #27ae60;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .result {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎮 Interactive Page</h1>
+    
+    <!-- Example 1: Click Button -->
+    <div class="box">
+        <h2>Example 1: Click Button</h2>
+        <button onclick="showMessage()">Click Me!</button>
+        <p id="message"></p>
+    </div>
+    
+    <!-- Example 2: Toggle Visibility -->
+    <div class="box">
+        <h2>Example 2: Toggle Menu</h2>
+        <button onclick="toggleMenu()">📱 Show Menu</button>
+        <div id="menu" style="display: none; margin-top: 15px; background-color: #ecf0f1; padding: 15px;">
+            <p>📌 Home</p>
+            <p>📌 About</p>
+            <p>📌 Contact</p>
+        </div>
+    </div>
+    
+    <!-- Example 3: Counter -->
+    <div class="box">
+        <h2>Example 3: Counter</h2>
+        <p style="font-size: 30px; text-align: center; font-weight: bold;">
+            Count: <span id="count">0</span>
+        </p>
+        <div style="text-align: center;">
+            <button onclick="addOne()">➕ Add 1</button>
+            <button onclick="subtractOne()">➖ Minus 1</button>
+            <button onclick="resetCount()">🔄 Reset</button>
+        </div>
+    </div>
+    
+    <!-- Example 4: Change Colors -->
+    <div class="box">
+        <h2>Example 4: Change Colors</h2>
+        <button onclick="changeBackgroundColor('lightblue')">Blue</button>
+        <button onclick="changeBackgroundColor('lightgreen')">Green</button>
+        <button onclick="changeBackgroundColor('lightyellow')">Yellow</button>
+        <button onclick="changeBackgroundColor('lightcoral')">Red</button>
+    </div>
+    
+    <!-- Example 5: Form Input -->
+    <div class="box">
+        <h2>Example 5: Say Your Name</h2>
+        <input type="text" id="nameInput" placeholder="Type your name...">
+        <button onclick="sayHello()">Say Hello</button>
+        <p id="greeting" class="message"></p>
+    </div>
+
+    <!-- ===== JAVASCRIPT CODE ===== -->
+    <script>
+        /* JavaScript = Makes the page interactive */
+        
+        // Example 1: Simple message
+        function showMessage() {
+            document.getElementById("message").innerHTML = "You clicked the button! 🎉";
+        }
+        
+        // Example 2: Toggle menu visibility
+        let menuVisible = false;
+        function toggleMenu() {
+            menuVisible = !menuVisible;
+            if (menuVisible) {
+                document.getElementById("menu").style.display = "block";
+            } else {
+                document.getElementById("menu").style.display = "none";
+            }
+        }
+        
+        // Example 3: Counter logic
+        let counter = 0;
+        function addOne() {
+            counter = counter + 1;
+            document.getElementById("count").innerHTML = counter;
+        }
+        function subtractOne() {
+            counter = counter - 1;
+            document.getElementById("count").innerHTML = counter;
+        }
+        function resetCount() {
+            counter = 0;
+            document.getElementById("count").innerHTML = counter;
+        }
+        
+        // Example 4: Change background color
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+        
+        // Example 5: Get user input and greet
+        function sayHello() {
+            let name = document.getElementById("nameInput").value;
+            if (name === "") {
+                document.getElementById("greeting").innerHTML = "Please enter your name!";
+            } else {
+                document.getElementById("greeting").innerHTML = "Hello, " + name + "! 👋";
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+    JAVASCRIPT CONCEPTS YOU LEARNED:
+    
+    1. function myFunction() { } = Reusable block of code
+    2. let variable = value = Store data
+    3. document.getElementById("id") = Get HTML element
+    4. .innerHTML = Change text inside element
+    5. .style.color = Change CSS property
+    6. onclick="functionName()" = Run when clicked
+    7. if (condition) { } = Make decisions
+    8. .value = Get text from input box
+    
+    PRACTICE:
+    ✓ Create a button that changes text color
+    ✓ Make a quiz with score tracking
+    ✓ Build a simple to-do list (add/delete items)
+    ✓ Create a calculator
+-->
